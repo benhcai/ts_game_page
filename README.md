@@ -7,4 +7,6 @@ Build process:
 2. Apply linting rules with eslint, stylelint, prettier
 3. Husky to lint files changed before committing
 4. Webpack to bundle files. Babel to transpile files to JS
+
 # ts_game_page
+https://www.youtube.com/watch?v=-EsK-3YUNrc&list=PLNNon0xuayxLYE2v9hp52ZIJaDIqmbNBF&index=3
