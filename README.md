@@ -10,3 +10,6 @@ Build process:
 
 # ts_game_page
 https://www.youtube.com/watch?v=-EsK-3YUNrc&list=PLNNon0xuayxLYE2v9hp52ZIJaDIqmbNBF&index=3
+
+Questions:
+[] What is a hoc error boundary, getDerivedStateFromError

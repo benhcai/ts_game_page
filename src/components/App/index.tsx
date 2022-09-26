@@ -1,20 +1,15 @@
 import { ReactElement, useState } from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "components/Home"
 
 const App = (): ReactElement => {
-    const [count, setCount] = useState(0)
 
     return (
-        <div>
-            Hi
-            <div>{ count }</div>    
-            <div className="">
-                <button onClick={() => {
-                    setCount(count => ++count)
-                }}>Increment</button>
-            </div>
-            <Home></Home>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter >
     )
 }
 

@@ -1,10 +1,14 @@
-import {ReactElement} from "react"
+import { ReactElement } from "react"
+import GameList from "components/GameList"
+import withErrorBoundary from "components/hoc/withErrorBoundary"
 
 const Home = (): ReactElement => {
 
     return (
-        <div>Home</div>
+        <div>
+            <GameList></GameList>
+        </div>
     )
 }
 
-export default Home
+export default withErrorBoundary(Home)

@@ -10,14 +10,20 @@ module.exports = {
         filename: '[name].[contenthash].bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.tsx?$/,
-            exclude: /node_modules/,
-            use: [
-                'babel-loader',
-                'stylelint-custom-processor-loader'
-            ]
-        }]
+        rules: [
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: [
+                    'babel-loader',
+                    'stylelint-custom-processor-loader'
+                ]
+            },
+            // {
+            //     test: /\.css$/,
+            //     use: ["style-loader", "css-loader"],
+            // }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -26,7 +32,7 @@ module.exports = {
     ],
     resolve: {
         modules: ['node_modules', path.resolve(__dirname, 'src')],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
     },
     devtool: 'inline-cheap-source-map',
     context: __dirname,
