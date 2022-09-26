@@ -2,6 +2,7 @@ import { ReactElement, ChangeEvent } from "react"
 import { Game } from 'types'
 import GameCard from "components/GameCard"
 import GameFilter from "components/GameFilter"
+import { SimpleGrid, ListItem, UnorderedList, ListIcon, Box } from "@chakra-ui/react"
 
 interface Props {
     err?: string
@@ -17,16 +18,18 @@ const GameList = ({ err, games, onFilterChange }: Props): ReactElement => {
         return <p>No games available</p>
     }
     return (
-        <div>
+        <Box>
             <GameFilter onChange={onFilterChange} />
-            <ul>
-                {games.map(game => (
-                    < li key={game.id} >
-                        <GameCard content={game}></GameCard>
-                    </li>
-                ))}
-            </ul >
-        </div>
+            <UnorderedList listStyleType="none" margin={10} marginTop={0}>
+                <SimpleGrid columns={[1, 1, 2, 3, 4]} spacingX={[2]} spacingY={[4]}>
+                    {games.map(game => (
+                        <ListItem key={game.id} >
+                            <GameCard content={game}></GameCard>
+                        </ListItem>
+                    ))}
+                </SimpleGrid>
+            </UnorderedList>
+        </Box >
     )
 }
 
